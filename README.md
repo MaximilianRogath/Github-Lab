@@ -1,7 +1,7 @@
 # GitHub-Lab Series
 
 A step-by-step tutorial series to learn **Git** and **GitHub** from scratch –
-designed for **self-learners** and as **onboarding material for colleagues**.
+designed for **self-learners** and **builders**.
 
 > Author: Max · Last updated: June 15, 2026 · Language: English
 
