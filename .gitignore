@@ -1,0 +1,11 @@
+# Local working material – do not publish
+_template/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
