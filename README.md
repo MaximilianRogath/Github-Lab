@@ -41,6 +41,7 @@ Every lab follows the same structure:
 | 1 | [`lab1-hello-github`](./lab1-hello-github/README.md) | Your first repository on github.com, commit via the web editor |
 | 2 | [`lab2-first-local-repo`](./lab2-first-local-repo/README.md) | Use Git locally: `init`, `status`, `add`, `commit`, `log` |
 | 3 | [`lab3-connect-remote`](./lab3-connect-remote/README.md) | Connect your local repo to GitHub: `remote add`, `push`, `pull`, `clone` |
+| 4 | [`lab4-branches-and-merges`](./lab4-branches-and-merges/README.md) | Branches and merges: `branch`, `switch`, `merge`, fast-forward vs three-way |
 
 ---
 
