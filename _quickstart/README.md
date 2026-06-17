@@ -101,6 +101,81 @@ git push -u origin main
 
 ---
 
+## Clone & run – get someone else's project running locally
+
+Someone sent you a GitHub link and you want to run it on your machine?
+This is the counterpart to the push workflow above.
+
+### Step 1 – Clone the repo
+
+```powershell
+git clone https://github.com/<USERNAME>/<REPO-NAME>.git
+cd <REPO-NAME>
+```
+
+`git clone` downloads the full repo (history included) and configures `origin`
+automatically – no `git init` or `git remote add` needed.
+
+### Step 2 – Install dependencies (Python)
+
+```powershell
+# Create and activate a virtual environment first (keeps your system clean)
+python -m venv .venv
+.venv\Scripts\activate          # Windows
+# source .venv/bin/activate     # macOS/Linux
+
+pip install -r requirements.txt
+```
+
+No `requirements.txt`? Ask the author to add one, or run `pip install <package>`
+for each import you see at the top of the code.
+
+### Step 3 – Set up secrets / environment variables
+
+```powershell
+# Copy the example file and fill in real values
+copy .env.example .env
+notepad .env                    # or open in VS Code: code .env
+```
+
+No `.env.example`? Ask the author – or look in the README / code for any
+`os.getenv(...)` calls to see which variables are expected.
+
+### Step 4 – Run it
+
+```powershell
+python main.py                  # or whatever the entry point is
+```
+
+Check the README for the exact run command if unsure.
+
+### Stay up to date
+
+When the author pushes new changes, pull them:
+
+```powershell
+git pull
+```
+
+If new packages were added:
+
+```powershell
+pip install -r requirements.txt
+```
+
+### If it doesn't work after cloning – checklist
+
+| Symptom | Likely cause | Fix |
+|---|---|---|
+| `ModuleNotFoundError` | Virtual env not activated or `pip install` not run | Activate `.venv`, then `pip install -r requirements.txt` |
+| `KeyError` / `None` for an env var | `.env` not created or missing a value | Check `.env.example`, fill in `.env` |
+| `python: command not found` | Python not installed or wrong version | Install from python.org or use `python3` |
+| Code runs but crashes with a path error | Hardcoded absolute paths in the code | Open an issue or PR on the repo (see Lab 9) |
+
+> 📚 **Deeper understanding:** [Lab 3 – Connect a remote](../lab3-connect-remote/) explains `clone`, `pull`, and remotes in detail.
+
+---
+
 ## Vibe-code specifics (ChatGPT / Copilot / Claude generated code)
 
 If your code came from an LLM, there are a few typical traps to check **before
